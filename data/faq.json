@@ -1,0 +1,30 @@
+{
+    "categories": [
+        {
+            "name": "Category 1",
+            "questions": [
+                {
+                    "question": "What is the first question in category 1?",
+                    "answer": "This is the answer to the first question in category 1."
+                },
+                {
+                    "question": "What is the second question in category 1?",
+                    "answer": "This is the answer to the second question in category 1."
+                }
+            ]
+        },
+        {
+            "name": "Category 2",
+            "questions": [
+                {
+                    "question": "What is the first question in category 2?",
+                    "answer": "This is the answer to the first question in category 2."
+                },
+                {
+                    "question": "What is the second question in category 2?",
+                    "answer": "This is the answer to the second question in category 2."
+                }
+            ]
+        }
+    ]
+}
