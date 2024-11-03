@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let faqData = []; // To store FAQ data after fetching
+    const faqContainer = document.getElementById('faq-container');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+    const searchBox = document.getElementById('searchBox');
+
+    // Fetch FAQ data
     fetch('data/faq.json')
         .then(response => {
             if (!response.ok) {
@@ -7,44 +13,79 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            const faqContainer = document.getElementById('faq-container');
-            if (data.categories.length === 0) {
-                faqContainer.innerHTML = '<p>No FAQs available.</p>';
-                return;
-            }
-
-            data.categories.forEach(category => {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = 'category';
-
-                const categoryHeader = document.createElement('h3');
-                categoryHeader.textContent = category.name;
-                categoryDiv.appendChild(categoryHeader);
-
-                category.questions.forEach(item => {
-                    const questionDiv = document.createElement('div');
-                    questionDiv.className = 'faq-item';
-
-                    const question = document.createElement('h4');
-                    question.textContent = item.question;
-                    question.addEventListener('click', function() {
-                        answer.classList.toggle('hidden'); // Toggle visibility of answer
-                    });
-
-                    const answer = document.createElement('p');
-                    answer.textContent = item.answer;
-                    answer.classList.add('hidden'); // Initially hidden
-
-                    questionDiv.appendChild(question);
-                    questionDiv.appendChild(answer);
-                    categoryDiv.appendChild(questionDiv);
-                });
-
-                faqContainer.appendChild(categoryDiv);
-            });
+            faqData = data.categories;
+            populateCategoryDropdown(faqData);
+            displayFAQs(faqData); // Initial display
         })
         .catch(error => {
             console.error('Error fetching the JSON data:', error);
-            document.getElementById('faq-container').innerHTML = '<p>Error loading FAQs.</p>';
+            faqContainer.innerHTML = '<p>Error loading FAQs.</p>';
         });
+
+    // Populate category dropdown
+    function populateCategoryDropdown(categories) {
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.name;
+            option.textContent = category.name;
+            categoryDropdown.appendChild(option);
+        });
+    }
+
+    // Display FAQs based on selected category and search text
+    function displayFAQs(categories, selectedCategory = '', searchText = '') {
+        faqContainer.innerHTML = ''; // Clear existing content
+
+        categories.forEach(category => {
+            if (selectedCategory && category.name !== selectedCategory) {
+                return;
+            }
+
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'category';
+
+            const categoryHeader = document.createElement('h3');
+            categoryHeader.textContent = category.name;
+            categoryDiv.appendChild(categoryHeader);
+
+            category.questions.forEach(item => {
+                if (searchText && !item.question.toLowerCase().includes(searchText.toLowerCase())) {
+                    return;
+                }
+
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'faq-item';
+
+                const question = document.createElement('h4');
+                question.textContent = item.question;
+                question.addEventListener('click', function() {
+                    answer.classList.toggle('hidden');
+                });
+
+                const answer = document.createElement('p');
+                answer.textContent = item.answer;
+                answer.classList.add('hidden');
+
+                questionDiv.appendChild(question);
+                questionDiv.appendChild(answer);
+                categoryDiv.appendChild(questionDiv);
+            });
+
+            faqContainer.appendChild(categoryDiv);
+        });
+    }
+
+    // Event listener for category dropdown change
+    categoryDropdown.addEventListener('change', function() {
+        const selectedCategory = categoryDropdown.value;
+        const searchText = searchBox.value;
+        displayFAQs(faqData, selectedCategory, searchText);
+    });
+
+    // Event listener for search box input
+    searchBox.addEventListener('input', function() {
+        const selectedCategory = categoryDropdown.value;
+        const searchText = searchBox.value;
+        displayFAQs(faqData, selectedCategory, searchText);
+    });
 });
