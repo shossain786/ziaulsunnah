@@ -473,3 +473,102 @@ h4, h5, h6, .h4, .h5, .h6 {
     color: var(--bs-primary) !important;
 }
 /*** Footer End ***/
+/* General styling for the text container */
+.text-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block; /* Centers the text on mobile */
+  }
+  
+  /* Styling for desktop */
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1.25rem;
+  }
+  
+  /* Media query for tablets and smaller screens */
+  @media (max-width: 768px) {
+    .carousel-caption h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+  
+    .text-container {
+      padding: 15px; /* Reduced padding for smaller screens */
+    }
+  
+    .btn {
+      padding: 10px 20px; /* Adjust button size */
+    }
+  }
+  
+  /* Media query for mobile phones */
+  @media (max-width: 576px) {
+    .carousel-caption h1 {
+      font-size: 1.5rem;
+    }
+  
+    .carousel-caption p {
+      font-size: 0.9rem;
+    }
+  
+    .text-container {
+      padding: 10px;
+    }
+  
+    .btn {
+      padding: 8px 16px; /* Further adjust button size for mobile */
+    }
+  }
+  /* Text container styling */
+.text-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 100%; /* Limit width of the text container */
+  }
+  
+  /* Position the text on the right */
+  .carousel-caption {
+    top: 0;
+    bottom: 0;
+    right: 10%;
+    left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: left;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .text-container {
+      max-width: 60%; /* Increase width on smaller screens for readability */
+      padding: 15px;
+    }
+    .carousel-caption {
+      right: 5%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .text-container {
+      max-width: 80%;
+      padding: 10px;
+    }
+    .carousel-caption h1 {
+      font-size: 1.5rem;
+    }
+    .carousel-caption p {
+      font-size: 1rem;
+    }
+  }
+  
