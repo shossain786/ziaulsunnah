@@ -1,6 +1,25 @@
 (function ($) {
     "use strict";
 
+    //local time: top bar
+    function updateDateTime() {
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const now = new Date().toLocaleString("en-US", {
+            timeZone: timeZone,
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true
+        });
+        document.getElementById("date-time").textContent = now;
+    }
+    
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+    
     // Spinner
     var spinner = function () {
         setTimeout(function () {
