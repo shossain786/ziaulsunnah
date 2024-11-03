@@ -124,7 +124,7 @@
 
 
         <!-- Contact Start -->
-        <div class="container-fluid contact py-5">
+        <!-- <div class="container-fluid contact py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
                     <p class="fs-5 text-uppercase text-primary">Get In Touch</p>
@@ -149,9 +149,38 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Contact Start -->
-
+        <div class="container-fluid contact py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                    <p class="fs-5 text-uppercase text-primary">Get In Touch</p>
+                    <h1 class="display-3">Contact For Any Queries</h1>
+                    <p class="mb-0">The contact form is functional. Feel free to reach out for any queries.</p>
+                </div>
+                <form id="contactForm">
+                    <div class="row g-4 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="col-sm-6">
+                            <input type="text" id="name" class="form-control bg-transparent p-3" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="email" id="email" class="form-control bg-transparent p-3" placeholder="Your Email" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" id="subject" class="form-control bg-transparent p-3" placeholder="Subject" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="message" class="w-100 form-control bg-transparent p-3" rows="6" cols="10" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary border-0 py-3 px-5" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="formResponse" class="text-center mt-4"></div>
+            </div>
+        </div>
+        
 
         <!-- Footer Start -->
         <div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -181,7 +210,7 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item mt-5">
-                            <h4 class="text-light mb-4">Our Mosque</h4>
+                            <h4 class="text-light mb-4">Our Madrassa</h4>
                             <div class="d-flex flex-column">
                                 <h6 class="text-secondary mb-0">Our Address</h6>
                                 <div class="d-flex align-items-center border-bottom py-4">
@@ -191,7 +220,7 @@
                                 <h6 class="text-secondary mt-4 mb-0">Our Mobile</h6>
                                 <div class="d-flex align-items-center py-4">
                                     <span class="flex-shrink-0 btn-square bg-primary me-3 p-4"><i class="fa fa-phone-alt text-dark"></i></span>
-                                    <a href="" class="text-body">+012 345 67890</a>
+                                    <a href="" class="text-body">+91-998-608-4575</a>
                                 </div>
                             </div>
                         </div>
@@ -201,13 +230,12 @@
                             <h4 class="text-light mb-4">Explore Link</h4>
                             <div class="d-flex flex-column align-items-start">
                                 <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Home</a>
-                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>About Us</a>
-                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Features</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Sawal Jawab</a>
+                                <!-- <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Features</a> -->
                                 <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Contact us</a>
-                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Blog</a>
-                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Events</a>
+                                <!-- <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Blog</a>
+                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Our Events</a> -->
                                 <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Donations</a>
-                                <a class="text-body mb-2" href=""><i class="fa fa-check text-primary me-2"></i>Sermons</a>
                             </div>
                         </div>
                     </div>
@@ -264,6 +292,7 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/contactform.js"></script>
     </body>
 
 </html>
