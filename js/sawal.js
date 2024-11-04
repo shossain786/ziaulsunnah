@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let faqData = []; // To store FAQ data after fetching
     const faqContainer = document.getElementById('faq-container');
     const categoryDropdown = document.getElementById('categoryDropdown');
     const searchBox = document.getElementById('searchBox');
 
-    // Fetch FAQ data
-    fetch('data/faq.json')
+    // Fetch FAQ data from PHP endpoint
+    fetch('get_sawal.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             displayFAQs(faqData); // Initial display
         })
         .catch(error => {
-            console.error('Error fetching the JSON data:', error);
+            console.error('Error fetching the data:', error);
             faqContainer.innerHTML = '<p>Error loading FAQs.</p>';
         });
 
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const question = document.createElement('h4');
                 question.textContent = item.question;
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     answer.classList.toggle('hidden');
                 });
 
@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event listener for category dropdown change
-    categoryDropdown.addEventListener('change', function() {
+    categoryDropdown.addEventListener('change', function () {
         const selectedCategory = categoryDropdown.value;
         const searchText = searchBox.value;
         displayFAQs(faqData, selectedCategory, searchText);
     });
 
     // Event listener for search box input
-    searchBox.addEventListener('input', function() {
+    searchBox.addEventListener('input', function () {
         const selectedCategory = categoryDropdown.value;
         const searchText = searchBox.value;
         displayFAQs(faqData, selectedCategory, searchText);

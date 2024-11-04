@@ -1,28 +1,32 @@
 {
     "categories": [
         {
-            "name": "Category 1",
+            "name": "Aqaid",
             "questions": [
                 {
-                    "question": "What is the first question in category 1?",
-                    "answer": "This is the answer to the first question in category 1."
+                    "question": "Taqdeer kise kehte hain?",
+                    "answer": "Dunya mein jo kuchh hota hai aur bande jo kuchhbhalai burai karte hain khuda e ta'ala ne use apne ilm kemuwafiq pahle se likh diya hai ise taqdeer kehte hain."
                 },
                 {
-                    "question": "What is the second question in category 1?",
-                    "answer": "This is the answer to the second question in category 1."
+                    "question": "Kya Allah ta'ala ne jaisa humari taqdeer mein likhdiya hai humein majbooran waisa karna padta hai?",
+                    "answer": "Nahin, Allah ta'ala ke likh dene se humeinmajbooran waisa karna nahi padta hai balki hum jaisakarne wale the Allah ta'ala ne apne ilm se waisa likh diyaagar kisi ki taqdeer mein burai likhi to isliye ki wo buraikarne wala tha agar wo bhalai karne wala hota to khuda eta'ala uski taqdeer mein bhalai likhta khulasa ye hai kikhuda e ta'ala ke likh dene se banda kisi kaam ke karnepar majboor nahi kiya gaya. Taqdeer haq hai uska inkarkarne wala gumrah badmazhab hai."
                 }
             ]
         },
         {
-            "name": "Category 2",
+            "name": "Taharat",
             "questions": [
                 {
-                    "question": "What is the first question in category 2?",
-                    "answer": "This is the answer to the first question in category 2."
+                    "question": "Wuzu mein kitni cheezein farz hain?",
+                    "answer": "Wuzu mein chaar cheezein farz hain:\n(1) munh dhona yani baal nikalne ki jagah se thuddi keneeche tak aur ek kaan ki lau se doosre kaan ki lau tak\n(2) kuhniyon samet donon hath dhona\n(3) chauthai (1/4) sar ka masah karna yani bheega huahath pherna\n(4) donon paanv takhanon samet dhona."
                 },
                 {
-                    "question": "What is the second question in category 2?",
-                    "answer": "This is the answer to the second question in category 2."
+                    "question": "Zubaan se tayammum ki niyyat ada karte waqt kyakahe?",
+                    "answer": "ye kahe \"niyyat ki maine tayammum ki Allahta'ala ka taqarrub hasil karne ke liye\""
+                },
+                {
+                    "question": "Kin cheezon se tayammum karna jaaiz nahi?",
+                    "answer": "Sona, chaandi, tamba, peetal, loha, lakdi,aluminium, jasta, kapda, raakh aur har qism ke galla setayammum karna jaaiz nahi yani jo cheezein aag meinpighal jati hain ya jal kar raakh ho jati hain un cheezon setayammum karna jaaiz nahi."
                 }
             ]
         }
