@@ -66,43 +66,6 @@ categories.forEach((category, categoryIndex) => {
 
 // Inject the HTML into the container
 faqContainer.innerHTML = accordionHTML;
-       /* categories.forEach(category => {
-            if (selectedCategory && category.name !== selectedCategory) {
-                return;
-            }
-
-            const categoryDiv = document.createElement('div');
-            categoryDiv.className = 'category';
-
-            const categoryHeader = document.createElement('h3');
-            categoryHeader.textContent = category.name;
-            categoryDiv.appendChild(categoryHeader);
-
-            category.questions.forEach(item => {
-                if (searchText && !item.question.toLowerCase().includes(searchText.toLowerCase())) {
-                    return;
-                }
-
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'faq-item';
-
-                const question = document.createElement('h4');
-                question.textContent = item.question;
-                question.addEventListener('click', function () {
-                    answer.classList.toggle('hidden');
-                });
-
-                const answer = document.createElement('p');
-                answer.textContent = item.answer;
-                answer.classList.add('hidden');
-
-                questionDiv.appendChild(question);
-                questionDiv.appendChild(answer);
-                categoryDiv.appendChild(questionDiv);
-            });
-
-            faqContainer.appendChild(categoryDiv);
-        }); */
     }
 
     // Event listener for category dropdown change
