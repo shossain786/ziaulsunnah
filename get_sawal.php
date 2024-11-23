@@ -1,9 +1,9 @@
 <?php
 // Database connection
-$host = '127.0.0.1'; // Replace with your DB host
-$username = ''; // Replace with your DB username
+$host = 'localhost'; // Replace with your DB host
+$username = 'root'; // Replace with your DB username
 $password = ''; // Replace with your DB password
-$database = ''; // Replace with your DB name
+$database = 'ziaulsunnah'; // Replace with your DB name
 
 $conn = new mysqli($host, $username, $password, $database);
 

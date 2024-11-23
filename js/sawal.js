@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     let faqData = []; // To store FAQ data after fetching
-    const faqContainer = document.getElementById('faq-container');
+    const faqContainer = document.getElementById('accordionExample');
     const categoryDropdown = document.getElementById('categoryDropdown');
     const searchBox = document.getElementById('searchBox');
 
@@ -35,8 +35,38 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display FAQs based on selected category and search text
     function displayFAQs(categories, selectedCategory = '', searchText = '') {
         faqContainer.innerHTML = ''; // Clear existing content
+console.log(categories)
+let accordionHTML = '';
+categories.forEach((category, categoryIndex) => {
+     if (selectedCategory && category.name !== selectedCategory) {
+                return;
+            }
+    let categoryHTML = `
+      
+            <div class="category-text">${category.name}</div>`;
+    
+    category.questions.forEach((item, questionIndex) => {
+          if (searchText && !item.question.toLowerCase().includes(searchText.toLowerCase())) {
+                    return;
+                }
+        categoryHTML += `
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading${categoryIndex}-${questionIndex}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${categoryIndex}-${questionIndex}" aria-expanded="false" aria-controls="collapse${categoryIndex}-${questionIndex}">${item.question}</button>
+            </h2>
+            <div id="collapse${categoryIndex}-${questionIndex}" class="accordion-collapse collapse" aria-labelledby="heading${categoryIndex}-${questionIndex}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">${item.answer}</div>
+            </div>`;
+                categoryHTML += `</div>`; // Close accordion-item
+    });
 
-        categories.forEach(category => {
+
+    accordionHTML += categoryHTML;
+});
+
+// Inject the HTML into the container
+faqContainer.innerHTML = accordionHTML;
+       /* categories.forEach(category => {
             if (selectedCategory && category.name !== selectedCategory) {
                 return;
             }
@@ -72,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             faqContainer.appendChild(categoryDiv);
-        });
+        }); */
     }
 
     // Event listener for category dropdown change

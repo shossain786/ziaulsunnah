@@ -42,6 +42,8 @@
         .category {
             margin-bottom: 20px;
         }
+        
+    
         </style>
     </head>
 
@@ -157,26 +159,41 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+          
+          
         <!-- Sawal o jawab Start -->
-        <div class="container py-5">
+        <div class="container py-5 quetion-answer-section">
             <div class="mx-auto text-center mb-5" style="max-width: 700px;">
                 <h1 class="display-3">Questions & Answers</h1>
         
                 <!-- Category Dropdown -->
-                <select id="categoryDropdown" class="form-control mb-3">
+                <select id="categoryDropdown" class="form-control mb-3 category-input">
                     <option value="">Select Category</option>
                 </select>
         
                 <!-- Search Box -->
-                <input type="text" id="searchBox" class="form-control mb-3" placeholder="Search for a question">
+            
+          <div class="search-container mb-5">
+        <input id="searchBox" type="text" placeholder="Search for a question..." class="search-input">
+        <button class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+        <div class="accordion" id="accordionExample">
+             
+</div>
         
+ 
                 <!-- FAQ Container -->
-                <div id="faq-container"></div>
+            
                 
                 <script src="js/sawal.js"></script>
             </div>
         </div>
-s        
+      
         <!-- Sawal o jawab End -->
 
 
